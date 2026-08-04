@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f1f5f9;
+    color:#333;
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+}
+
+section{
+    margin:25px 0;
+}
+
+h2{
+    color:#2563eb;
+    margin-bottom:15px;
+}
