@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User CRUD</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>User CRUD Application</h1>
+
+    <p>Using FakeStore API</p>
+
+
+    <!-- Main Buttons -->
+
+    <div class="buttons">
+
+        <button id="loadBtn">
+            Load Users
+        </button>
+
+        <button id="showCreateBtn">
+            Create User
+        </button>
+
+        <button id="searchBtn">
+            Search
+        </button>
+
+    </div>
+
+
+    <!-- Search Section -->
+
+    <div id="searchSection" style="display: none;">
+
+        <h2>Search User</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by ID, username, email or phone"
+        >
+
+        <button id="doSearchBtn">
+            Search
+        </button>
+
+        <button id="clearSearchBtn">
+            Clear
+        </button>
+
+    </div>
+
+
+    <!-- User Form -->
+
+    <div
+        class="add-user"
+        id="userForm"
+        style="display: none;"
+    >
+
+        <h2 id="formTitle">
+            Create User
+        </h2>
+
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter username"
+        >
+
+
+        <input
+            type="email"
+            id="email"
+            placeholder="example@gmail.com"
+        >
+
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+        >
+
+
+        <input
+            type="text"
+            id="firstname"
+            placeholder="Enter first name"
+        >
+
+
+        <input
+            type="text"
+            id="lastname"
+            placeholder="Enter last name"
+        >
+
+
+        <input
+            type="text"
+            id="city"
+            placeholder="Enter city"
+        >
+
+
+        <input
+            type="text"
+            id="street"
+            placeholder="Enter street"
+        >
+
+
+        <input
+            type="number"
+            id="number"
+            placeholder="Enter house number"
+        >
+
+
+        <input
+            type="text"
+            id="zipcode"
+            placeholder="Enter zipcode"
+        >
+
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="98XXXXXXXX"
+        >
+
+
+        <div>
+
+            <button id="submitUserBtn">
+                Create User
+            </button>
+
+            <button id="backBtn">
+                Back to Users
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Loading -->
+
+    <div id="loading">
+
+        <div class="spinner"></div>
+
+        <span>
+            Loading...
+        </span>
+
+    </div>
+
+
+    <!-- Message -->
+
+    <p id="message"></p>
+
+
+    <!-- User Table -->
+
+    <div id="tableSection">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Username</th>
+
+                    <th>Email</th>
+
+                    <th>Phone</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="userTable"></tbody>
+
+        </table>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
