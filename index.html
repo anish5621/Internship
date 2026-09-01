@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+      <h1>Product Management System</h1>
+      <button id="openFormBtn" type="button">+ Add New Product</button>
+    </div>
+
+    <div class="stats-card">
+      <h3>Total Inventory Value: $<span id="totalValue">0.00</span></h3>
+    </div>
+    <div style="grid-column: 1 / -1;">
+      <p id="appError"></p>
+    </div>
+    
+    <div class="panel hidden" id="formPanel">
+      <h2 id="formTitle">Add Product</h2>
+      
+      <form id="productForm">
+        <input type="hidden" id="productId" />
+
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" placeholder="e.g. Wireless Mouse" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" placeholder="Short description..." required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="price">Price ($)</label>
+            <input type="number" id="price" step="0.01" min="0.01" placeholder="0.00" required />
+          </div>
+
+          <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" min="0" placeholder="0" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" required>
+              <option value="Electronics">Electronics</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Books">Books</option>
+              <option value="Home">Home</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" required>
+              <option value="active">Active</option>
+              <option value="discontinued">Discontinued</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top: 10px; display: flex; gap: 8px;">
+          <button type="submit" id="submitBtn">Save Product</button>
+          <button type="button" id="cancelBtn" class="hidden">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel" id="listPanel">
+      <h2>Products List</h2>
+
+  
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="Search by name..." />
+
+        <select id="filterCategory">
+          <option value="all">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <option value="Home">Home</option>
+        </select>
+
+        <select id="filterStatus">
+          <option value="all">All Statuses</option>
+          <option value="active">Active</option>
+          <option value="discontinued">Discontinued</option>
+        </select>
+
+        <select id="sortByPrice">
+          <option value="none">Sort by Price</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+        </select>
+      </div>
+
+      <p id="emptyMessage" class="hidden" style="color: var(--text-muted); padding: 10px 0;">No products found.</p>
+
+      <div id="productList" class="product-grid"></div>
+    </div>
+
+  </div>
+
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
